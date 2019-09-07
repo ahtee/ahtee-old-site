@@ -1,23 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import Button from './components/Button';
+import Portrait from './components/Portrait';
 import './App.css';
+import ben from './images/ben.jpg';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Portrait image={ben} border="dashed" borderColor="#bebbeb" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Something good is on the way...
+          <span role="img" aria-label="Bus Emoji">
+            🚌
+          </span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button>Notify Me</Button>
       </header>
     </div>
   );
