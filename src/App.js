@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './components/Button';
-import logo from './logo.svg';
+import Portrait from './components/Portrait';
 import './App.css';
+import ben from './images/ben.jpg';
 
 function App() {
-  const []
-
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Portrait image={ben} border="dashed" borderColor="#bebbeb" />
         <p>
-          Something good is on the way{' '}
+          Something good is on the way...
           <span role="img" aria-label="Bus Emoji">
             🚌
           </span>
-          ...
         </p>
-        <Button title="Notify Me" onClickHandler={() => handleNotification()} />
+        <Button>Notify Me</Button>
       </header>
     </div>
   );
