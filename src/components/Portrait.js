@@ -8,6 +8,7 @@ function Portrait(props) {
     border: `15px ${border ? border : 'solid'}`,
     borderColor: borderColor ? borderColor : 'black',
     width: '50vw'
+    maxWidth: '400px'
   };
   return <img src={image} style={PortraitStyles} alt={alt} {...props} />;
 }
