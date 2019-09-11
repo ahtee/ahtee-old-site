@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from './components/Button';
+import { ButtonPrimary, ButtonDanger, BorderBox } from '@primer/components';
 import Portrait from './components/Portrait';
 import './App.css';
 import ben from './images/ben.jpg';
@@ -18,8 +18,21 @@ function App() {
             🚌
           </span>
         </p>
-        <Button onClick={() => setShowForm(!showForm)}>Notify Me</Button>
-        {showForm && <Form />}
+        {showForm ? (
+          <ButtonDanger onClick={() => setShowForm(false)}>
+            Nevermind
+          </ButtonDanger>
+        ) : (
+          <ButtonPrimary onClick={() => setShowForm(true)}>
+            Notify Me
+          </ButtonPrimary>
+        )}
+
+        {showForm && (
+          <BorderBox p={4} mt={4}>
+            <Form />
+          </BorderBox>
+        )}
       </header>
     </div>
   );
