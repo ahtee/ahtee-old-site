@@ -6,7 +6,8 @@ function Portrait(props) {
   const PortraitStyles = {
     borderRadius: shape === `square` ? `10px` : `100%`,
     border: `15px ${border ? border : 'solid'}`,
-    borderColor: borderColor ? borderColor : 'black'
+    borderColor: borderColor ? borderColor : 'black',
+    width: '50vw'
   };
   return <img src={image} style={PortraitStyles} alt={alt} {...props} />;
 }
