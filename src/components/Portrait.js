@@ -1,22 +1,27 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 function Portrait(props) {
-  const { image, shape, border, borderColor, alt } = props;
-  const PortraitStyles = {
-    borderRadius: shape === `square` ? `10px` : `100%`,
-    border: `15px ${border ? border : 'solid'}`,
-    borderColor: borderColor ? borderColor : 'black',
-    width: '50vw',
-    maxWidth: '400px'
-  };
-  return <img src={image} style={PortraitStyles} alt={alt} {...props} />;
+  const { image, alt, size = 70 } = props;
+  const PortraitStyles = styled.img`
+    border-radius: 10%;
+    margin: 10px;
+  `;
+  return (
+    <PortraitStyles
+      src={image}
+      alt={alt}
+      {...props}
+      width={size}
+      height={size}
+    />
+  );
 }
 export default Portrait;
 
 Portrait.propTypes = {
-  image: propTypes.string,
-  shape: propTypes.string,
-  border: propTypes.string,
-  borderColor: propTypes.string
+  image: PropTypes.string,
+  alt: PropTypes.string,
+  size: PropTypes.number
 };
