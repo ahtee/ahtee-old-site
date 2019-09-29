@@ -2,28 +2,28 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
-const SocialStyles = styled.div`
-  margin: 20px 0px;
-  display: flex;
-  flex-direction: row;
+function Social(props) {
+  const { twitter, facebook, instagram, github, linkedin, size = '1x' } = props;
 
-  ul {
-    list-style-type: none;
-  }
+  const SocialStyles = styled.div`
+    margin: 20px 0px;
 
-  a {
-    color: #ffffff;
-  }
-`;
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      ${'right' in props && `justify-content: flex-end;`}
+    }
 
-function Social({
-  twitter,
-  facebook,
-  instagram,
-  github,
-  linkedin,
-  size = '1x'
-}) {
+    li {
+      margin: 0px 10px;
+    }
+
+    a {
+      color: #ffffff;
+    }
+  `;
+
   return (
     <SocialStyles>
       <ul>

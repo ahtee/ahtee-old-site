@@ -16,9 +16,9 @@ function Footer() {
             <p>Made in Ohio</p>
             <p>&copy; 2019</p>
           </Col>
-
           <Col>
             <Social
+              right
               twitter="bencotte"
               facebook="bencotte"
               instagram="bencotte"
