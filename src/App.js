@@ -19,6 +19,7 @@ function App() {
     <DarkTheme>
       <Router>
         <Navbar
+          title="Ben Otte"
           image={ben}
           items={[{ id: 'projects', name: 'Projects', to: '/projects' }]}
         />
