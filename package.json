@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.24",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
@@ -12,7 +15,10 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-grid-system": "^5.0.2",
+    "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.1",
+    "styled-components": "^4.3.2",
     "typescript": "^3.6.2"
   },
   "scripts": {
