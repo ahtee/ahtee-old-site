@@ -15,6 +15,8 @@ const DarkTheme = styled.div`
 `;
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <DarkTheme>
       <Router>

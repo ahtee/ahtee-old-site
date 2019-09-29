@@ -1,6 +1,6 @@
 {
   "name": "ahtee",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
@@ -54,6 +54,7 @@
     }
   },
   "devDependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "styled-components": "^4.3.2"
   }
 }
