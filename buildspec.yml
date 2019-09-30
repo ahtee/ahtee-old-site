@@ -5,8 +5,9 @@ phases:
     runtime-versions:
       nodejs: 8
       nodejs: 10
-    - commands:
-        - apt-get install -y yarn
+      nodejs: 12
+    commands:
+      - apt-get install -y yarn
   preBuild:
     commands:
       - yarn install
