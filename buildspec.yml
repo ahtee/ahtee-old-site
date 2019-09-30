@@ -7,17 +7,18 @@ phases:
       nodejs: 10
       nodejs: 12
     commands:
+      - apt-get update -y
       - apt-get install -y yarn
-  preBuild:
+  pre_build:
     commands:
       - yarn install
   build:
     commands:
       - yarn run build
 artifacts:
-  baseDirectory: build
   files:
     - "**/*"
+  base-directory: build
 cache:
   paths:
     - node_modules/**/*
