@@ -1,10 +1,16 @@
 version: 0.1
 frontend:
   phases:
+    install:
+      - commands:
+        - apt update -y
+        - apt-get install -y yarn
     preBuild:
       commands:
         - yarn install
     build:
+      runtime-versions:
+        nodejs: 10
       commands:
         - yarn run build
   artifacts:
