@@ -1,22 +1,21 @@
-version: 0.1
-frontend:
-  phases:
-    install:
-      - commands:
-        - apt update -y
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    - commands:
         - apt-get install -y yarn
-    preBuild:
-      commands:
-        - yarn install
-    build:
-      runtime-versions:
-        nodejs: 10
-      commands:
-        - yarn run build
-  artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+  preBuild:
+    commands:
+      - yarn install
+  build:
+    commands:
+      - yarn run build
+artifacts:
+  baseDirectory: build
+  files:
+    - "**/*"
+cache:
+  paths:
+    - node_modules/**/*
