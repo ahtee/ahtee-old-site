@@ -7,6 +7,8 @@ import Home from './Home';
 import Projects from './Projects';
 import NotFound from './NotFound';
 import ben from './images/ben.jpg';
+import Blog from './Blog';
+import BlogPost from './components/BlogPost';
 
 const DarkTheme = styled.div`
   background-color: #393e46;
@@ -21,11 +23,16 @@ function App() {
         <Navbar
           title="Ben Otte"
           image={ben}
-          items={[{ id: 'projects', name: 'Projects', to: '/projects' }]}
+          items={[
+            { id: 'projects', name: 'Projects', to: '/projects' },
+            { id: 'blog', name: 'Blog', to: '/blog' }
+          ]}
         />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/projects" component={Projects} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/blog/:post" component={BlogPost} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
