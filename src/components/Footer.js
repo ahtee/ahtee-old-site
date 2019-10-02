@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Social from './Social';
 
 const DarkFooter = styled.footer`
-  background: #393e46;
+  background: #232931;
 `;
 
 function Footer() {

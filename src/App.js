@@ -11,7 +11,7 @@ import Blog from './Blog';
 import BlogPost from './components/BlogPost';
 
 const DarkTheme = styled.div`
-  background: #232931;
+  background-color: #393e46;
   color: #eeeeee;
   min-height: 100vh;
 `;
