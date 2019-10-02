@@ -10,6 +10,7 @@ phases:
       - apt-get install -y yarn
   pre_build:
     commands:
+      - aws s3 rm --recursive "s3://${ARTIFACTS_BUCKET}/"
       - yarn install
   build:
     commands:
