@@ -9,7 +9,7 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #232931;
+  background: #393e46;
   color: #eeeeee;
 
   .hamburger {
