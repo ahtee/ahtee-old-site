@@ -8,7 +8,6 @@ import Projects from './Projects';
 import NotFound from './NotFound';
 import ben from './images/ben.jpg';
 import Blog from './Blog';
-import BlogPost from './components/BlogPost';
 
 const DarkTheme = styled.div`
   background-color: #393e46;
@@ -32,7 +31,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/projects" component={Projects} />
           <Route path="/blog" component={Blog} />
-          <Route path="/blog/:post" component={BlogPost} />
+          <Route path="/blog/:id" component={Blog} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
