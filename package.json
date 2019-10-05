@@ -1,5 +1,6 @@
 {
   "name": "ahtee",
+  "homepage": "https://otte.io",
   "version": "0.2.1",
   "private": true,
   "dependencies": {
@@ -11,6 +12,8 @@
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "auth0-js": "^9.11.3",
+    "dotenv": "^8.1.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",

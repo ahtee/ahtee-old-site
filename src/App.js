@@ -9,6 +9,23 @@ import NotFound from './NotFound';
 import ben from './images/ben.jpg';
 import Blog from './Blog';
 
+const Context = React.createContext();
+const initialState = {
+  loggedIn: false
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_LOG_IN':
+      return {
+        ...state,
+        value: action.payload
+      };
+    default:
+      return state;
+  }
+};
+
 const DarkTheme = styled.div`
   background-color: #393e46;
   color: #eeeeee;
@@ -16,27 +33,32 @@ const DarkTheme = styled.div`
 `;
 
 function App() {
+  const [loggedIn, setLoggedIn] = React.useState(initialState);
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
   return (
-    <DarkTheme>
-      <Router>
-        <Navbar
-          title="Ben Otte"
-          image={ben}
-          items={[
-            { id: 'projects', name: 'Projects', to: '/projects' },
-            { id: 'blog', name: 'Blog', to: '/blog' }
-          ]}
-        />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:id" component={Blog} />
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-      </Router>
-    </DarkTheme>
+    <Context.Provider>
+      <DarkTheme>
+        <Router>
+          <Navbar
+            title="Ben Otte"
+            image={ben}
+            items={[
+              { id: 'projects', name: 'Projects', to: '/projects' },
+              { id: 'blog', name: 'Blog', to: '/blog' }
+            ]}
+          />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:id" component={Blog} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </Router>
+      </DarkTheme>
+    </Context.Provider>
   );
 }
 
