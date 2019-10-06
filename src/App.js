@@ -53,6 +53,7 @@ function App() {
             <Route path="/projects" component={Projects} />
             <Route path="/blog" component={Blog} />
             <Route path="/blog/:id" component={Blog} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </Router>
