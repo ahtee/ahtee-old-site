@@ -7,6 +7,7 @@ import Home from './Home';
 import Projects from './Projects';
 import ben from './images/ben.jpg';
 import Blog from './Blog';
+import NotFound from './NotFound';
 
 const Context = React.createContext();
 
