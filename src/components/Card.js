@@ -24,13 +24,14 @@ const CardBody = styled.div`
   padding: 0.75rem 1.25rem;
 `;
 
-function Card({ userId, id, title, body }) {
+function Card({ userId, id, title, body, children }) {
   return (
     <Container id={id}>
       {title && <CardHeader>{title}</CardHeader>}
       <CardBody>
         {userId && <h3>@{userId}</h3>}
         {body && <p>{body}</p>}
+        {children}
       </CardBody>
     </Container>
   );
