@@ -26,7 +26,7 @@ const devTools = [
     buttonText: 'Vue Projects',
     buttonVariant: 'success',
     buttonLink: 'https://github.com/ahtee?tab=repositories&q=vue',
-    border: 'primary'
+    border: 'success'
   },
   {
     src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
