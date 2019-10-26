@@ -1,29 +1,16 @@
 {
   "name": "ahtee",
-  "homepage": "https://otte.io",
-  "version": "0.2.1",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.24",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.4",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "auth0-js": "^9.11.3",
-    "dotenv": "^8.1.0",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5",
-    "prettier": "^1.18.2",
-    "react": "^16.9.0",
-    "react-countdown-now": "^2.1.1",
-    "react-dom": "^16.9.0",
-    "react-grid-system": "^5.0.2",
-    "react-router-dom": "^5.1.1",
-    "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2"
+    "@reach/router": "^1.2.1",
+    "bootstrap": "^4.3.1",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.11.0",
+    "react-error-boundary": "^1.2.5",
+    "react-loading-skeleton": "^1.2.0",
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,34 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
-    "prop-types": "^15.7.2",
-    "styled-components": "^4.3.2"
+    "prettier": "^1.18.2"
   }
 }
