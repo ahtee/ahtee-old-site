@@ -1,34 +1,31 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
-import styled from 'styled-components';
-import Social from './Social';
+import React from 'react'
+import { Container, Col, Row } from 'react-bootstrap'
+import { Link } from '@reach/router'
 
-const DarkFooter = styled.footer`
-  background: #232931;
-`;
+const footerStyles = {
+  background: '#060606',
+  marginTop: 10,
+  padding: 10,
+  color: '#ffffff'
+}
 
-function Footer() {
+function Footer(props) {
   return (
-    <DarkFooter>
+    <footer style={footerStyles}>
       <Container>
         <Row>
-          <Col>
-            <p>Made in Ohio</p>
-            <p>&copy; 2019</p>
+          <Col md={4}>
+            <h5>Social</h5>
           </Col>
-          <Col>
-            <Social
-              right
-              twitter="bencotte"
-              facebook="bencotte"
-              instagram="bencotte"
-              linkedin="otteben"
-              github="ahtee"
-            />
+          <Col md={4}>
+            <Link to="/contact">
+              <h5>Contact</h5>
+            </Link>
           </Col>
+          <Col md={4}></Col>
         </Row>
       </Container>
-    </DarkFooter>
-  );
+    </footer>
+  )
 }
-export default Footer;
+export default Footer

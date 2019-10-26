@@ -1,47 +1,38 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './Home';
-import Projects from './Projects';
-import ben from './images/ben.jpg';
-import Blog from './Blog';
-import NotFound from './NotFound';
+import React from 'react'
+import { Router } from '@reach/router'
+import './App.css'
+import Loading from './components/Loading'
+import Navigation from './components/Navigation'
+import Footer from './components/Footer'
+import Page from './components/Page'
+const Blog = React.lazy(() => import('./pages/Blog'))
+const Contact = React.lazy(() => import('./pages/Contact'))
+const Home = React.lazy(() => import('./pages/Home'))
+const History = React.lazy(() => import('./pages/History'))
+const NotFound = React.lazy(() => import('./pages/NotFound'))
+const Portfolio = React.lazy(() => import('./pages/Portfolio'))
 
-const Context = React.createContext();
-
-const DarkTheme = styled.div`
-  background-color: #393e46;
-  color: #eeeeee;
-  min-height: 100vh;
-`;
+const navLinks = [{ title: 'Contact', to: '/contact' }]
 
 function App() {
   return (
-    <Context.Provider>
-      <DarkTheme>
-        <Router>
-          <Navbar
-            title="Ben Otte"
-            image={ben}
-            items={[
-              { id: 'projects', name: 'Projects', to: '/projects' },
-              { id: 'blog', name: 'Blog', to: '/blog' }
-            ]}
-          />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/blog/:id" component={Blog} />
-            <Route component={NotFound} />
-          </Switch>
-          <Footer />
-        </Router>
-      </DarkTheme>
-    </Context.Provider>
-  );
+    <div>
+      <Navigation title="otte.io" items={navLinks} />
+      <React.Suspense fallback={<Loading />}>
+        <Page>
+          <Router>
+            <Blog path="/blog" />
+            <Contact path="/contact" />
+            <Home path="/" />
+            <History path="/history" />
+            <Portfolio path="/portfolio" />
+            <NotFound default />
+          </Router>
+        </Page>
+      </React.Suspense>
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App
