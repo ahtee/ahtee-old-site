@@ -17,7 +17,7 @@ const devTools = [
     buttonText: 'React Projects',
     buttonVariant: 'primary',
     buttonLink: 'https://github.com/ahtee?tab=repositories&q=react',
-    border: 'primary'
+    border: 'primary',
   },
   {
     src: 'https://cdn.worldvectorlogo.com/logos/vue-js-1.svg',
@@ -27,7 +27,7 @@ const devTools = [
     buttonText: 'Vue Projects',
     buttonVariant: 'success',
     buttonLink: 'https://github.com/ahtee?tab=repositories&q=vue',
-    border: 'success'
+    border: 'success',
   },
   {
     src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
@@ -37,8 +37,8 @@ const devTools = [
     buttonText: 'SA-A Certification',
     buttonVariant: 'warning',
     buttonLink: '/',
-    border: 'warning'
-  }
+    border: 'warning',
+  },
 ]
 
 function Home() {

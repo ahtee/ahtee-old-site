@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import ContactForm from '../components/ContactForm'
 
 const marginAuto = {
-  margin: '0px auto'
+  margin: '0px auto',
 }
 
 function Contact(props) {
