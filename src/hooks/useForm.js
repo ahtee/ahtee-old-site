@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { navigate } from '@reach/router'
 
 const useForm = () => {
   const [values, setValues] = useState({})
@@ -11,6 +12,7 @@ const useForm = () => {
       event.stopPropagation()
     }
     setValidated(true)
+    navigate(`/`)
   }
 
   const handleChange = event => {

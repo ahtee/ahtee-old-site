@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 import Loading from '../components/Loading'
 import me from '../images/me.jpg'
 import Timeline from '../components/Timeline'
@@ -43,6 +44,10 @@ const devTools = [
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>otte.io</title>
+        <meta name="description" content="otte.io welcome" />
+      </Helmet>
       <Header
         title="Ben Otte"
         tagline="Frontend web developer, experienced and certified in AWS Cloud Services, JavaScript thinker, former musician, and always learning."
