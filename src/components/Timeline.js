@@ -25,8 +25,9 @@ function Timeline() {
         <ErrorBoundary fallback={ErrorFallback}>
           <React.Suspense fallback={<Loading />}>
             <ul className="list-unstyled">
-              {historicalMoments.map(moment => (
+              {historicalMoments.map((moment, index) => (
                 <MediaSection
+                  key={index}
                   title={moment.title}
                   description={moment.description}
                 />
