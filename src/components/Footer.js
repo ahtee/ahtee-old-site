@@ -6,7 +6,7 @@ const footerStyles = {
   background: '#060606',
   marginTop: 10,
   padding: 10,
-  color: '#ffffff'
+  color: '#ffffff',
 }
 
 function Footer(props) {

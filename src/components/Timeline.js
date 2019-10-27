@@ -9,13 +9,13 @@ const historicalMoments = [
   {
     title: 'Computer Information Technology',
     description:
-      'Attended Northern Kentucky University first in August of 2010.'
+      'Attended Northern Kentucky University first in August of 2010.',
   },
   {
     title: 'Frontend Web Developer',
     description:
-      'Upon graduation, I accepted a role as a Web Developer working on features for an AngularJS application in Covington, KY. I worked there for a year until accepting a Site Reliability role at General Electric.'
-  }
+      'Upon graduation, I accepted a role as a Web Developer working on features for an AngularJS application in Covington, KY. I worked there for a year until accepting a Site Reliability role at General Electric.',
+  },
 ]
 
 function Timeline() {

@@ -3,7 +3,7 @@ import React from 'react'
 const headerImageStyles = {
   borderRadius: 4,
   border: '1px solid #ddd',
-  margin: '0 auto 2rem auto'
+  margin: '0 auto 2rem auto',
 }
 
 function HeaderImage(props) {
