@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import Header from '../components/Header'
 
 function Blog() {
   return (
@@ -8,7 +9,7 @@ function Blog() {
         <title>otte.io | Blog</title>
         <meta name="description" content="otte.io blog posts" />
       </Helmet>
-      Blog
+      <Header title="Blog (coming soon!)" />
     </div>
   )
 }
