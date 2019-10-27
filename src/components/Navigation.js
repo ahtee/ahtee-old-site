@@ -5,7 +5,7 @@ const NavigationImage = React.lazy(() => import('./NavigationImage'))
 
 const navLinkStyles = {
   margin: '0px 5px',
-  color: 'grey'
+  color: 'grey',
 }
 
 function Navigation(props) {

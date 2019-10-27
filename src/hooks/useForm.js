@@ -17,7 +17,7 @@ const useForm = () => {
     event.persist()
     setValues(values => ({
       ...values,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     }))
   }
 
@@ -25,7 +25,7 @@ const useForm = () => {
     handleChange,
     handleSubmit,
     values,
-    validated
+    validated,
   }
 }
 

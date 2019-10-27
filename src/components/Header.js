@@ -2,11 +2,11 @@ import React from 'react'
 import { Container, Col, Jumbotron, Row } from 'react-bootstrap'
 
 const alignTextCenter = {
-  textAlign: 'center'
+  textAlign: 'center',
 }
 
 const alignContentMiddle = {
-  margin: 'auto 0px'
+  margin: 'auto 0px',
 }
 
 function Header(props) {
