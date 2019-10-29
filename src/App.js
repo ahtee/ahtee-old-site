@@ -22,6 +22,11 @@ const navLinks = [
 
 function App() {
   const [isAuthenticated, setAuthenticated] = useState(false)
+
+  const handleLogout = () => {
+    setAuthenticated(false)
+  }
+
   return (
     <div>
       <React.Suspense fallback={<Loading />}>
@@ -30,6 +35,7 @@ function App() {
           items={navLinks}
           isAuthenticated={isAuthenticated}
           setAuthenticated={setAuthenticated}
+          handleLogout={handleLogout}
         />
         <React.Suspense fallback={<Loading />}>
           <Page>

@@ -5,10 +5,6 @@ import NavLink from './NavLink'
 const NavigationImage = React.lazy(() => import('./NavigationImage'))
 
 function Navigation(props) {
-  const handleLogout = () => {
-    props.setAuthenticated(false)
-  }
-
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       {props.image && (
@@ -29,7 +25,7 @@ function Navigation(props) {
               </NavLink>
             ))}
           {props.isAuthenticated ? (
-            <NavLink onClick={handleLogout}>Logout</NavLink>
+            <NavLink onClick={props.handleLogout}>Logout</NavLink>
           ) : (
             <NavLink to="/login">Login</NavLink>
           )}
