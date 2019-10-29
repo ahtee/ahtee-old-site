@@ -1,6 +1,5 @@
 import React from 'react'
-import { Col, Form } from 'react-bootstrap'
-import PrimaryButton from './PrimaryButton'
+import { Button, Col, Form } from 'react-bootstrap'
 import useForm from '../hooks/useForm'
 
 function ContactForm() {
@@ -50,12 +49,12 @@ function ContactForm() {
           required
         />
       </Form.Group>
-      <PrimaryButton type="submit">
+      <Button type="submit" block disabled={!validated}>
         <span role="img" aria-label="Send form">
           🚀
         </span>{' '}
         Send
-      </PrimaryButton>
+      </Button>
     </Form>
   )
 }

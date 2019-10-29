@@ -5,6 +5,10 @@ import NavLink from './NavLink'
 const NavigationImage = React.lazy(() => import('./NavigationImage'))
 
 function Navigation(props) {
+  const handleLogout = () => {
+    props.setAuthenticated(false)
+  }
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       {props.image && (
@@ -24,6 +28,11 @@ function Navigation(props) {
                 {item.title}
               </NavLink>
             ))}
+          {props.isAuthenticated ? (
+            <NavLink onClick={handleLogout}>Logout</NavLink>
+          ) : (
+            <NavLink to="/login">Login</NavLink>
+          )}
           <a
             href="https://github.com/ahtee/ahtee"
             style={{ margin: '0px .5rem', color: '#fff' }}
