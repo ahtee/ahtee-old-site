@@ -24,6 +24,11 @@ function Navigation(props) {
                 {item.title}
               </NavLink>
             ))}
+          {props.isAuthenticated ? (
+            <NavLink onClick={props.handleLogout}>Logout</NavLink>
+          ) : (
+            <NavLink to="/login">Login</NavLink>
+          )}
           <a
             href="https://github.com/ahtee/ahtee"
             style={{ margin: '0px .5rem', color: '#fff' }}
