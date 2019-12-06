@@ -29,14 +29,16 @@ function App() {
 
   return (
     <div>
-      <React.Suspense fallback={<Loading />}>
-        <Navigation
-          title="otte.io"
-          items={navLinks}
-          isAuthenticated={isAuthenticated}
-          setAuthenticated={setAuthenticated}
-          handleLogout={handleLogout}
-        />
+      <React.SuspenseList revealOrder="forwards">
+        <React.Suspense fallback={<Loading />}>
+          <Navigation
+            title="otte.io"
+            items={navLinks}
+            isAuthenticated={isAuthenticated}
+            setAuthenticated={setAuthenticated}
+            handleLogout={handleLogout}
+          />
+        </React.Suspense>
         <React.Suspense fallback={<Loading />}>
           <Page>
             <React.Suspense fallback={<Loading />}>
@@ -52,11 +54,11 @@ function App() {
               </Router>
             </React.Suspense>
           </Page>
-          <React.Suspense fallback={<Loading />}>
-            <Footer />
-          </React.Suspense>
         </React.Suspense>
-      </React.Suspense>
+        <React.Suspense fallback={<Loading />}>
+          <Footer />
+        </React.Suspense>
+      </React.SuspenseList>
     </div>
   )
 }
