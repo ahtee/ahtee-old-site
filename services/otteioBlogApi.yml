@@ -1,0 +1,42 @@
+---
+service: otteio-blog-api
+
+package:
+  individually: true # Create an optimized package for each lambda function
+
+plugins:
+  - serverless-bundle # Package our functions with Webpack
+  - serverless-offline 
+  - serverless-dotenv-plugin # Load .env as environment variables
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: prod
+  region: us-east-2
+
+environment:
+  tableName: process.env.TABLE_NAME
+
+iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:DescribeTable 
+      - dynamodb:Query 
+	    - dynamodb:Scan 
+      - dynamodb:GetItem 
+      - dynamodb:PutItem 
+      - dynamodb:UpdateItem 
+      - dynamodb:DeleteItem 
+    Resource: process.env.TABLE_ARN 
+
+functions:
+  createBlogPost:
+    handler: createBlogPost.main
+    events:
+      - http:
+      	path: posts
+		    method: post
+		    cors: yes
+		    authorizer: aws_iam
+...

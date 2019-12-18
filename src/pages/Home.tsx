@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Carousel } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import Loading from '../components/Loading'
 import me from '../images/me.jpg'
@@ -31,14 +31,38 @@ const devTools = [
     external: true,
   },
   {
+    title: 'JavaScript',
+    description:
+      'Understanding of ES6+ features and their tradeoffs. Knowledgeable about the event loop and using Promises to achieve asynchronous code.',
+    buttonText: 'Vue Projects',
+    buttonVariant: 'warning',
+    buttonLink: 'https://github.com/ahtee?tab=repositories&q=vue',
+    border: 'warning',
+    external: true,
+  },
+]
+
+const certifications = [
+  {
     src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
     title: 'Amazon Web Services',
     description:
       'Familiar with the available toolset provided by AWS and the best practices for deployment.',
-    buttonText: 'SA-A Certification',
+    buttonText: 'Solutions Architect',
     buttonVariant: 'warning',
     buttonLink:
       'https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2018-09-21&ci=AWS00577397',
+    border: 'warning',
+    external: true,
+  },
+  {
+    src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
+    title: 'Amazon Web Services',
+    description: 'Understands the developer suite of products offered by AWS.',
+    buttonText: 'Developer',
+    buttonVariant: 'warning',
+    buttonLink:
+      'https://www.certmetrics.com/amazon/public/badge.aspx?i=2&t=c&d=2019-11-15&ci=AWS00577397',
     border: 'warning',
     external: true,
   },
@@ -53,7 +77,7 @@ function Home() {
       </Helmet>
       <Header
         title="Ben Otte"
-        tagline="Frontend web developer, experienced and certified in AWS Cloud Services, JavaScript thinker, former musician, and always learning."
+        tagline="Frontend web developer, experienced and certified in AWS Cloud Services, JavaScript thinker, former musician, and always learning. Site Reliability at GE."
       >
         <React.Suspense fallback={<Loading />}>
           <HeaderImage src={me} alt="Ben Otte" width="200" height="270" />
@@ -61,7 +85,7 @@ function Home() {
       </Header>
       <Container>
         <Row>
-          <h3>Development tools</h3>
+          <h3>Front End</h3>
         </Row>
         <Row>
           {devTools.map((tool, index) => (
@@ -78,6 +102,29 @@ function Home() {
               />
             </Col>
           ))}
+        </Row>
+        <hr />
+        <Row>
+          <h3>Cloud</h3>
+        </Row>
+        <Row>
+          {certifications.map((cert, index) => (
+            <Col key={index} md={4} sm={6} xs={12}>
+              <CardImage
+                src={cert.src}
+                title={cert.title}
+                description={cert.description}
+                buttonText={cert.buttonText}
+                buttonVariant={cert.buttonVariant}
+                buttonLink={cert.buttonLink}
+                border={cert.border}
+                external={cert.external}
+              />
+            </Col>
+          ))}
+        </Row>
+        <Row>
+          <Carousel />
         </Row>
       </Container>
     </div>
