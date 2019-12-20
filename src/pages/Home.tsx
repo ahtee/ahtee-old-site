@@ -34,11 +34,6 @@ const devTools = [
     title: 'JavaScript',
     description:
       'Understanding of ES6+ features and their tradeoffs. Knowledgeable about the event loop and using Promises to achieve asynchronous code.',
-    buttonText: 'Vue Projects',
-    buttonVariant: 'warning',
-    buttonLink: 'https://github.com/ahtee?tab=repositories&q=vue',
-    border: 'warning',
-    external: true,
   },
 ]
 
