@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Auth } from 'aws-amplify'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Spinner } from 'react-bootstrap'
 
 function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(
+    event => {
+      if (isLoading) {
+        handleSubmit(event).then(() => {
+          setLoading(false)
+        })
+      }
+    },
+    [isLoading]
+  )
 
   const validateForm = () => email.length > 5 && password.length > 7
 
@@ -40,8 +52,17 @@ function LoginForm() {
           onChange={e => setPassword(e.target.value)}
         />
       </Form.Group>
-      <Button type="submit" block disabled={!validateForm()}>
-        Login
+      <Button
+        type="submit"
+        block
+        disabled={!validateForm()}
+        onClick={!isLoading ? handleSubmit : null}
+      >
+        {isLoading ? (
+          <Spinner as="span" animation="border" variant="light" disabled />
+        ) : (
+          'Login'
+        )}
       </Button>
     </Form>
   )

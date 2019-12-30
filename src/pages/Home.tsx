@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Col, Row, Carousel } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
+import styled from 'styled-components'
 import Loading from '../components/Loading'
 import me from '../images/me.jpg'
 const CardImage = React.lazy(() => import('../components/CardImage'))
@@ -33,17 +34,22 @@ const devTools = [
   {
     title: 'JavaScript',
     description:
-      'Understanding of ES6+ features and their tradeoffs. Knowledgeable about the event loop and using Promises to achieve asynchronous code.',
+      'Understanding of ES6+ features and their tradeoffs. Knowledgeable about asynchronous JavaScript.',
+    buttonText: 'JS Projects',
+    buttonVariant: 'warning',
+    buttonLink: 'https://github.com/ahtee?tab=repositories&q=javascript',
+    border: 'warning',
+    external: true,
   },
 ]
 
 const certifications = [
   {
     src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
-    title: 'Amazon Web Services',
+    title: 'AWS Solutions Architect',
     description:
       'Familiar with the available toolset provided by AWS and the best practices for deployment.',
-    buttonText: 'Solutions Architect',
+    buttonText: 'View Certification',
     buttonVariant: 'warning',
     buttonLink:
       'https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2018-09-21&ci=AWS00577397',
@@ -52,9 +58,9 @@ const certifications = [
   },
   {
     src: 'https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg',
-    title: 'Amazon Web Services',
+    title: 'AWS Developer',
     description: 'Understands the developer suite of products offered by AWS.',
-    buttonText: 'Developer',
+    buttonText: 'View Certification',
     buttonVariant: 'warning',
     buttonLink:
       'https://www.certmetrics.com/amazon/public/badge.aspx?i=2&t=c&d=2019-11-15&ci=AWS00577397',
@@ -62,6 +68,12 @@ const certifications = [
     external: true,
   },
 ]
+
+const HeaderImageFloating = styled(HeaderImage)`
+  :hover {
+    transform: scale(1.2);
+  }
+`
 
 function Home() {
   return (
@@ -72,10 +84,15 @@ function Home() {
       </Helmet>
       <Header
         title="Ben Otte"
-        tagline="Frontend web developer, experienced and certified in AWS Cloud Services, JavaScript thinker, former musician, and always learning. Site Reliability at GE."
+        tagline="Frontend web developer, experienced and certified in AWS Cloud Services. Currently a Site Reliability Engineer at General Electric."
       >
         <React.Suspense fallback={<Loading />}>
-          <HeaderImage src={me} alt="Ben Otte" width="200" height="270" />
+          <HeaderImageFloating
+            src={me}
+            alt="Ben Otte"
+            width="200"
+            height="270"
+          />
         </React.Suspense>
       </Header>
       <Container>
