@@ -8,12 +8,14 @@ function LoginForm() {
 
   const validateForm = () => email.length > 5 && password.length > 7
 
-  async function handleSubmit(e) {
-    e.preventDefault()
+  async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault()
+
     try {
       await Auth.signIn(email, password)
+      alert('Logged in')
     } catch (e) {
-      return e.message
+      alert(e.message)
     }
   }
 
@@ -26,7 +28,7 @@ function LoginForm() {
           type="email"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={event => setEmail(event.target.value)}
         />
       </Form.Group>
       <Form.Group controlId="loginPassword">
