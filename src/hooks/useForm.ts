@@ -1,11 +1,23 @@
 import { useState } from 'react'
 import { navigate } from '@reach/router'
 
+interface IFormValues {
+  name: string
+  email: string
+  phone: string
+  agreement: boolean
+}
+
 const useForm = () => {
-  const [values, setValues] = useState({})
+  const [values, setValues] = useState<IFormValues>({
+    name: '',
+    email: '',
+    phone: '',
+    agreement: false,
+  })
   const [validated, setValidated] = useState(false)
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     const form = event.currentTarget
     if (form.checkValidity() === false) {
       event.preventDefault()
@@ -15,7 +27,7 @@ const useForm = () => {
     navigate(`/`)
   }
 
-  const handleChange = event => {
+  const handleChange = (event: React.SyntheticEvent) => {
     event.persist()
     setValues(values => ({
       ...values,

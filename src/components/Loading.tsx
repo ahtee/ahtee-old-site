@@ -7,7 +7,7 @@ const LoadingStyles = {
   alignItems: 'center',
 }
 
-function Loading() {
+function Loading(): React.ReactNode {
   return (
     <div style={LoadingStyles}>
       <Spinner animation="border" variant="primary" />

@@ -2,11 +2,21 @@ import React from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { FiExternalLink } from 'react-icons/fi'
 
+interface ICardImage {
+  border?: string
+  title: string
+  description: string
+  buttonLink?: string
+  buttonText?: string
+  buttonVariant?: string
+  external: boolean
+}
+
 const CardMarginTopBottom = {
   margin: '5px 0px',
 }
 
-function CardImage(props) {
+function CardImage(props: ICardImage): React.ReactNode {
   return (
     <Card border={props.border} style={CardMarginTopBottom}>
       <Card.Body>

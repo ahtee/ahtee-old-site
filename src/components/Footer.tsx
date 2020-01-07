@@ -9,7 +9,7 @@ const footerStyles = {
   color: '#ffffff',
 }
 
-function Footer(props) {
+function Footer(): React.ReactNode {
   return (
     <footer style={footerStyles}>
       <Container>

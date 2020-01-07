@@ -2,6 +2,12 @@ import React from 'react'
 import { Container, Col, Jumbotron, Row } from 'react-bootstrap'
 import styled, { keyframes } from 'styled-components'
 
+interface IHeader {
+  title: string
+  tagline: string
+  children?: React.ReactNode
+}
+
 const AlignTextCenter = styled.h1`
   text-align: center;
 `
@@ -26,7 +32,7 @@ const AnimatedJumbotron = styled(Jumbotron)`
   animation: ${colorSpectrumTransition} 6s infinite;
 `
 
-function Header(props) {
+function Header(props: IHeader): React.ReactNode {
   return (
     <AnimatedJumbotron fluid>
       <Container>

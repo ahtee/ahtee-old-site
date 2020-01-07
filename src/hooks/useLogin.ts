@@ -4,7 +4,7 @@ const useLogin = () => {
   const [values, setValues] = useState({})
   const [validated, setValidated] = useState(false)
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     const form = event.currentTarget
     if (form.checkValidity() === false) {
       event.preventDefault()
@@ -13,7 +13,7 @@ const useLogin = () => {
     setValidated(true)
   }
 
-  const handleChange = event => {
+  const handleChange = (event: React.SyntheticEvent) => {
     event.persist()
     setValues(values => ({
       ...values,

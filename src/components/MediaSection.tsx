@@ -1,7 +1,14 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
 
-function MediaSection(props) {
+interface IMediaSection {
+  src: string
+  alt: string
+  title: string
+  description: string
+}
+
+function MediaSection(props: IMediaSection): React.ReactNode {
   return (
     <Media as="li">
       <img

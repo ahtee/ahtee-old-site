@@ -1,7 +1,12 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-function CardQuote(props) {
+interface ICardQuote {
+  quote: string
+  author: string
+}
+
+function CardQuote(props: ICardQuote): React.ReactNode {
   return (
     <Card className="p-3">
       <blockquote className="blockquote mb-0 card-body">

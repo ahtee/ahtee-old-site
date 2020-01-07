@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ErrorFallback(props) {
+function ErrorFallback(): JSX.Element {
   return <div>Sorry! an error occurred.</div>
 }
 export default ErrorFallback

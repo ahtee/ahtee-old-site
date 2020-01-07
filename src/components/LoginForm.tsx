@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Auth } from 'aws-amplify'
 import { Button, Form, Spinner } from 'react-bootstrap'
 
-function LoginForm() {
+function LoginForm(): React.ReactNode {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setLoading] = useState(false)
@@ -40,7 +40,9 @@ function LoginForm() {
           type="email"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$"
           value={email}
-          onChange={event => setEmail(event.target.value)}
+          onChange={(event: React.SyntheticEvent) =>
+            setEmail(event.target.value)
+          }
         />
       </Form.Group>
       <Form.Group controlId="loginPassword">
