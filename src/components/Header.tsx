@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Col, Jumbotron, Row } from 'react-bootstrap'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 interface IHeader {
   title: string
@@ -22,6 +22,7 @@ const AlignContentMiddle = styled(Col)`
 
 const JumbotronBackground = styled(Jumbotron)`
   background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  margin-bottom: 0;
 `
 
 function Header(props: IHeader): React.ReactNode {

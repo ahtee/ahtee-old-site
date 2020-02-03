@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col, Row, Carousel } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 const CardImage = React.lazy(() => import('../components/CardImage'))
@@ -64,7 +64,39 @@ const certifications = [
     border: 'warning',
     external: true,
   },
+  {
+    src: "",
+    title: 'Azure Administrator',
+    description: 'Studying to become a certified Azure Administrator! Come back soon to view certification!',
+    buttonText: 'Coming Soon',
+    buttonVariant: 'primary',
+    buttonLink: '/',
+    border: 'primary',
+    external: false
+  }
 ]
+
+const ShadedContentContainer = styled.main`
+  padding: 3rem 0;
+  background: #F8f8f8;
+`;
+
+const ContentContainer = styled.main`
+  padding: 3rem 0;
+`;
+
+const MainContent = styled.div`
+  max-width: 1024px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  margin: 0px auto;
+`;
+
+const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 function Home() {
   return (
@@ -77,55 +109,53 @@ function Home() {
         title="Ben Otte"
         tagline="Frontend web developer, experienced and certified in AWS Cloud Services. Currently a Site Reliability Engineer at General Electric."
       ></Header>
-      <Container>
-        <Col>
+      <ContentContainer>
+        <MainContent>
           <h3>Front End</h3>
           <p>
             Experienced in front-end development frameworks with expertise in
             JavaScript, HTML5, CSS, and React.js. Check out some projects on my{' '}
             <a href="https://github.com/ahtee">GitHub</a>.
           </p>
-        </Col>
-        <Row>
-          {devTools.map((tool, index) => (
-            <Col key={index} md={4} sm={6} xs={12}>
-              <CardImage
-                src={tool.src}
-                title={tool.title}
-                description={tool.description}
-                buttonText={tool.buttonText}
-                buttonVariant={tool.buttonVariant}
-                buttonLink={tool.buttonLink}
-                border={tool.border}
-                external={tool.external}
-              />
-            </Col>
-          ))}
-        </Row>
-        <hr />
-        <Col>
+          <FlexRow>
+            {devTools.map((tool, index) => (
+              <Col key={index} md={4} sm={6} xs={12}>
+                <CardImage
+                  src={tool.src}
+                  title={tool.title}
+                  description={tool.description}
+                  buttonText={tool.buttonText}
+                  buttonVariant={tool.buttonVariant}
+                  buttonLink={tool.buttonLink}
+                  border={tool.border}
+                  external={tool.external}
+                />
+              </Col>
+            ))}
+          </FlexRow>
+        </MainContent>
+      </ContentContainer>
+      <ShadedContentContainer>
+        <MainContent>
           <h3>Cloud</h3>
-        </Col>
-        <Row>
-          {certifications.map((cert, index) => (
-            <Col key={index} md={4} sm={6} xs={12}>
-              <CardImage
-                src={cert.src}
-                title={cert.title}
-                description={cert.description}
-                buttonText={cert.buttonText}
-                buttonVariant={cert.buttonVariant}
-                buttonLink={cert.buttonLink}
-                border={cert.border}
-                external={cert.external}
-              />
-            </Col>
-          ))}
-        </Row>
-        <Row>
-          <Carousel />
-        </Row>
-      </Container>
+          <FlexRow>
+            {certifications.map((cert, index) => (
+              <Col key={index} md={4} sm={6} xs={12}>
+                <CardImage
+                  src={cert.src}
+                  title={cert.title}
+                  description={cert.description}
+                  buttonText={cert.buttonText}
+                  buttonVariant={cert.buttonVariant}
+                  buttonLink={cert.buttonLink}
+                  border={cert.border}
+                  external={cert.external}
+                />
+              </Col>
+            ))}
+          </FlexRow>
+        </MainContent>
+      </ShadedContentContainer>
     </div>
   )
 }
