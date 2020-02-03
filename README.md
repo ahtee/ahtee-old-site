@@ -6,3 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # ahtee
 
 This project is an ongoing project representing the web development skill and experience by ahtee.
+
+# Get started :rocket:
+
+Clone this repo locally and run:
+
+```sh
+npm install
+```
+
+Run the React app with:
+
+```sh
+npm start
+```

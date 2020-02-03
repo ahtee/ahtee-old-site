@@ -10,22 +10,18 @@ const Navigation = React.lazy(() => import('./components/Navigation'))
 const NotFound = React.lazy(() => import('./pages/NotFound'))
 const Page = React.lazy(() => import('./components/Page'))
 
-const navLinks = [
-  { title: 'Contact', to: '/contact' },
-]
+const navLinks = [{ title: 'Contact', to: '/contact' }]
 
 function App() {
   const [isAuthenticated, setAuthenticated] = useState(false)
 
-  const handleClick = () => {
-    setAuthenticated(!isAuthenticated)
-  }
+  const handleClick = () => setAuthenticated(!isAuthenticated)
 
   return (
-    <div>
+    <React.Fragment>
       <React.Suspense fallback={<Loading />}>
         <Navigation
-          title="otte.io"
+          title="Intro"
           items={navLinks}
           isAuthenticated={isAuthenticated}
           setAuthenticated={setAuthenticated}
@@ -47,7 +43,7 @@ function App() {
       <React.Suspense fallback={<Loading />}>
         <Footer />
       </React.Suspense>
-    </div>
+    </React.Fragment>
   )
 }
 

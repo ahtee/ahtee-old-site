@@ -2,11 +2,8 @@ import React from 'react'
 import { Container, Col, Row, Carousel } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
-import Loading from '../components/Loading'
-import me from '../images/me.jpg'
 const CardImage = React.lazy(() => import('../components/CardImage'))
 const Header = React.lazy(() => import('../components/Header'))
-const HeaderImage = React.lazy(() => import('../components/HeaderImage'))
 
 const devTools = [
   {
@@ -69,12 +66,6 @@ const certifications = [
   },
 ]
 
-const HeaderImageFloating = styled(HeaderImage)`
-  :hover {
-    transform: scale(1.2);
-  }
-`
-
 function Home() {
   return (
     <div>
@@ -85,20 +76,16 @@ function Home() {
       <Header
         title="Ben Otte"
         tagline="Frontend web developer, experienced and certified in AWS Cloud Services. Currently a Site Reliability Engineer at General Electric."
-      >
-        <React.Suspense fallback={<Loading />}>
-          <HeaderImageFloating
-            src={me}
-            alt="Ben Otte"
-            width="200"
-            height="270"
-          />
-        </React.Suspense>
-      </Header>
+      ></Header>
       <Container>
-        <Row>
+        <Col>
           <h3>Front End</h3>
-        </Row>
+          <p>
+            Experienced in front-end development frameworks with expertise in
+            JavaScript, HTML5, CSS, and React.js. Check out some projects on my{' '}
+            <a href="https://github.com/ahtee">GitHub</a>.
+          </p>
+        </Col>
         <Row>
           {devTools.map((tool, index) => (
             <Col key={index} md={4} sm={6} xs={12}>
@@ -116,9 +103,9 @@ function Home() {
           ))}
         </Row>
         <hr />
-        <Row>
+        <Col>
           <h3>Cloud</h3>
-        </Row>
+        </Col>
         <Row>
           {certifications.map((cert, index) => (
             <Col key={index} md={4} sm={6} xs={12}>
