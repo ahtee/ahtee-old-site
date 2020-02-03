@@ -15,7 +15,6 @@ function Login() {
         <title>otte.io | Login</title>
         <meta name="description" content="User log in" />
       </Helmet>
-      <Header title="User Login" />
       <Container fluid>
         <Col xl={4} lg={4} md={6} style={marginAuto}>
           <Card body>

@@ -10,7 +10,7 @@ function NavLink(props) {
         // anchor element's props
         return {
           style: {
-            color: isCurrent ? '#fff' : 'grey',
+            color: isCurrent ? 'green' : 'grey',
             margin: '0px .5rem',
           },
         }

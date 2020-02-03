@@ -9,42 +9,39 @@ interface IHeader {
 }
 
 const AlignTextCenter = styled.h1`
+  font-size: 5rem;
+  font-weight: bold;
   text-align: center;
 `
 
 const AlignContentMiddle = styled(Col)`
-  margin: auto 0px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0px auto;
 `
 
-const colorSpectrumTransition = keyframes`
-  0% {
-    background: #20E4A4;
-  }
-  50% {
-    background: #2CC9CC;
-  }
-  100% {
-    background: #20E4A4;
-  }
-`
-
-const AnimatedJumbotron = styled(Jumbotron)`
-  animation: ${colorSpectrumTransition} 6s infinite;
+const JumbotronBackground = styled(Jumbotron)`
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
 `
 
 function Header(props: IHeader): React.ReactNode {
   return (
-    <AnimatedJumbotron fluid>
+    <JumbotronBackground fluid>
       <Container>
         <Row>
           {props.children && <Col md={4}>{props.children}</Col>}
           <AlignContentMiddle>
+            <AlignTextCenter>
+              <span role="img" aria-label="sunglasses emoji">
+                😎
+              </span>
+            </AlignTextCenter>
             <AlignTextCenter>{props.title}</AlignTextCenter>
             <p>{props.tagline}</p>
           </AlignContentMiddle>
         </Row>
       </Container>
-    </AnimatedJumbotron>
+    </JumbotronBackground>
   )
 }
 export default Header

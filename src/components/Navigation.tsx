@@ -6,7 +6,7 @@ const NavigationImage = React.lazy(() => import('./NavigationImage'))
 
 function Navigation(props) {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg">
       {props.image && (
         <React.Suspense fallback={<span>...</span>}>
           <NavigationImage />
