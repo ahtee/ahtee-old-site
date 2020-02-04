@@ -7,7 +7,7 @@ const marginAuto = {
   margin: '0px auto',
 }
 
-function Contact(props) {
+function Contact() {
   return (
     <div>
       <Helmet>
@@ -16,9 +16,10 @@ function Contact(props) {
       </Helmet>
       <Container fluid>
         <Col xl={4} lg={4} md={6} style={marginAuto}>
-          <Card body>
+          {/* <Card body>
             <ContactForm />
-          </Card>
+          </Card> */}
+          <p>Send me an email at <a href="mailto:benottedev@gmail.com">benottedev@gmail.com</a></p>
         </Col>
       </Container>
     </div>
