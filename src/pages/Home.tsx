@@ -107,14 +107,14 @@ function Home() {
       </Helmet>
       <Header
         title="Ben Otte"
-        tagline="Frontend web developer, experienced and certified in AWS Cloud Services. Currently a Site Reliability Engineer at General Electric."
+        tagline="Seeking new opportunities! Frontend web developer who is certified in AWS Cloud Services. Currently a Site Reliability Engineer at General Electric."
       ></Header>
       <ContentContainer>
         <MainContent>
           <h3>Front End</h3>
           <p>
             Experienced in front-end development frameworks with expertise in
-            JavaScript, HTML5, CSS, and React.js. Check out some projects on my{' '}
+            JavaScript, HTML5, CSS3, and React.js. Check out some projects on my{' '}
             <a href="https://github.com/ahtee">GitHub</a>.
           </p>
           <FlexRow>
@@ -138,6 +138,7 @@ function Home() {
       <ShadedContentContainer>
         <MainContent>
           <h3>Cloud</h3>
+          <p>Knowledgeable about Cloud platforms, site reliability, DevOps tools, configuration management, monitoring, resource management, templating, and more...</p>
           <FlexRow>
             {certifications.map((cert, index) => (
               <Col key={index} md={4} sm={6} xs={12}>
