@@ -16,10 +16,13 @@ function Contact() {
       </Helmet>
       <Container fluid>
         <Col xl={4} lg={4} md={6} style={marginAuto}>
-          {/* <Card body>
+          <Card body>
             <ContactForm />
-          </Card> */}
-          <p>Send me an email at <a href="mailto:benottedev@gmail.com">benottedev@gmail.com</a></p>
+          </Card>
+          <p>
+            Send me an email at{' '}
+            <a href="mailto:benottedev@gmail.com">benottedev@gmail.com</a>
+          </p>
         </Col>
       </Container>
     </div>
