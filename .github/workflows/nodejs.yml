@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x, 14.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -21,14 +21,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - name: install yarn package to the global node instance
+    - name: install node modules
       run: |
-        npm install -g yarn
-    - name: install node modules with yarn
-      run: |
-        yarn install
+        npm install
+        
     - name: build the react project
       run: |
-        yarn build --if-present
+        npm build --if-present
       env:
         CI: true
